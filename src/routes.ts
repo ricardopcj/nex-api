@@ -18,7 +18,7 @@ export default function routes(app: Application) {
   app.post("/sessions", authenticate);
   app.post("/signout", verifyJwt, signOut);
 
-  app.get("/items", verifyJwt, listItems);
+  app.get("/items", listItems);
 
   app.post("/items", verifyRole("ADMIN"), createItem);
 }
